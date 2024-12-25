@@ -411,7 +411,7 @@ document.querySelector('.signout a').addEventListener('click', async function (e
 
       if (response.ok) {
 
-          localStorage.removeItem('token'); // Remove token if stored
+          localStorage.removeItem('userEmail'); // Remove token if stored
           sessionStorage.clear();
           alert("You have been logged out.");
           window.location.href = "HomePage.html"; // Redirect to login or home page

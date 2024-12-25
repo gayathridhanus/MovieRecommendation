@@ -108,7 +108,7 @@
       <div id="rateModal" class="modal">
         <div class="modal-content">
           <h2 id="yourModal">Rate this</h2>
-          <h3>Amaran</h3>
+          <h3 id="movietitle">Amaran</h3>
           <div class="stars">
             <span class="star" data-value="1"><i class='bx bxs-star'></i></span>
             <span class="star" data-value="2"><i class='bx bxs-star'></i></span>
@@ -177,7 +177,7 @@
             <i class="bx bxs-star"></i>
             <span>8.7</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="Moana 2">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="Moana 2">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -187,7 +187,7 @@
             <i class="bx bxs-star"></i>
             <span>9.0</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="Gladiator II">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="Gladiator II">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -197,7 +197,7 @@
             <i class="bx bxs-star"></i>
             <span>8.0</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="Kolaigaran">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="Kolaigaran">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -207,7 +207,7 @@
             <i class="bx bxs-star"></i>
             <span>8.6</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="Dune part II">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="Dune part II">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -217,7 +217,7 @@
             <i class="bx bxs-star"></i>
             <span>8.7</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="Amaran">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="Amaran">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -227,7 +227,7 @@
             <i class="bx bxs-star"></i>
             <span>8.8</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="LuckyBaskar">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="LuckyBaskar">Rate</button>
         </div>
 
         <div class="Seemore" onclick="Seemore()">
@@ -246,7 +246,7 @@
             <i class="bx bxs-star"></i>
             <span>8.7</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="OKadhalkanmani">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="OKadhalkanmani">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -256,7 +256,7 @@
             <i class="bx bxs-star"></i>
             <span>9.0</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="RaguThatha">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="RaguThatha">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -266,7 +266,7 @@
             <i class="bx bxs-star"></i>
             <span>8.0</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="The Batman">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="The Batman">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -279,7 +279,7 @@
             <i class="bx bxs-star"></i>
             <span>8.6</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="TheHouseNextDoor">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="TheHouseNextDoor">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -289,7 +289,7 @@
             <i class="bx bxs-star"></i>
             <span>8.7</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="Moana 2">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="Moana 2">Rate</button>
         </div>
 
         <div class="movie-card">
@@ -299,18 +299,105 @@
             <i class="bx bxs-star"></i>
             <span>9.0</span>
           </div>
-          <button class="rate-btn" onclick="scrollToTop()" data-movie="Gladiator II">Rate</button>
+          <button class="rate-btn" onclick="showmovieoverview()" data-movie="Gladiator II">Rate</button>
         </div>
       </div>
     </div>
     <div class="signout">
       <a href="#"><img src="assets/logouticon.png" alt="logout"></a>
     </div>
+    <script src="js/Recommentation.js"></script>
     <script>
+        
+        var cc = document.querySelector(".carousel-container");
+        var mv = document.querySelector(".movieoverview");
+        var dots = document.querySelector(".dots");
+
+        function showmovieoverview() {
+              if(mv.style.display === "none"){
+                mv.style.display = "none";
+                cc.style.display = "block";
+                dots.style.display = "block";
+              }
+              else{
+                mv.style.display = "block";
+                cc.style.display = "none";
+                dots.style.display = "none";
+              }
+        }
+
+        var seeMoreSection = document.querySelector(".top-picks.see");
+        var seemore = document.querySelectorAll(".Seemore");
+
+        function Seemore() {
+          if (
+            seeMoreSection.style.display === "none" ||
+            seeMoreSection.style.display === ""
+          ) {
+            seeMoreSection.style.display = "block";
+            seemore.forEach((item) => {
+              item.style.display = "none";
+            });
+          } else {
+            seeMoreSection.style.display = "none";
+            seemore.forEach((item) => {
+              item.style.display = "block";
+            });
+          }
+        }
 
 
+        function scrollToTop() {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
+
+        const images = document.querySelectorAll(".carousel-container img");
+
+        images.forEach((image) => {
+          image.addEventListener("click", () => {
+            images.forEach((img) => img.classList.remove("active"));
+            image.classList.add("active");
+          });
+        });
+
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function currentSlide(n) {
+          showSlides((slideIndex = n));
+        }
+
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("myslides");
+          let dots = document.getElementsByClassName("dot");
+
+          if (n > slides.length) {
+            slideIndex = 1;
+          }
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+
+          // Reset all images and dots
+          for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active-slide");
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active-dot");
+          }
+
+          // Activate the selected image and dot
+          slides[slideIndex - 1].classList.add("active-slide");
+          dots[slideIndex - 1].classList.add("active-dot");
+        }
+          
 
     </script>
-    <script src="js/FeaturedMovies.js"></script>
+    
   </body>
 </html>
