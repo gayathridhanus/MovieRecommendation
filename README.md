@@ -11,7 +11,9 @@ Table of Contents
 ________________________________________
 
 Overview
-The Movie Recommendation Platform is a dynamic and interactive web application that allows users to explore, rate, and manage movies. With features such as a floating menu, personalized ratings, sign-up/sign-in capabilities, and a Django REST Framework (DRF)-powered backend, the platform offers a seamless movie browsing experience.
+The Movie Recommendation Platform is a Dynamic and interactive web application that allows users to explore, rate, and manage movies. 
+With features such as a floating menu, personalized ratings, sign-up/sign-in capabilities, and a Django REST Framework (DRF)-powered backend, 
+the platform offers a seamless movie browsing experience.
 ________________________________________
 
 Features
@@ -129,6 +131,15 @@ Ratings
 •	POST /api/rate_movie/ - Submit or update a movie rating.
 •	GET /api/get_rate/?email=<email>&movie_name=<movie_name> - Retrieve a user's rating for a specific movie.
 ________________________________________
+
+Future Enhancements
+In the future, we plan to:
+
+•   Incorporate hybrid recommendation algorithms for more accurate suggestions.
+•   Make the platform fully responsive for mobile devices.
+
+________________________________________
+
 Contributing
 Feel free to contribute to the project! Fork the repository, make your changes, and submit a pull request.
 ________________________________________

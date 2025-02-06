@@ -46,7 +46,7 @@ import json
 @csrf_exempt 
 def rate_movie(request):
     if request.method == 'POST':
-        data = json.loads(request.body)# if not movie_id else request.POST
+        data = json.loads(request.body) # if not movie_id else request.POST
         print(data)
         email = data.get("email")
         movie_name = data.get('movie_name')# if not movie_id else data.get('movie_id') 
